@@ -1,0 +1,89 @@
+{
+  "labels": {
+    "DCOS_PACKAGE_RELEASE": "1",
+    "DCOS_PACKAGE_SOURCE": "https://universe.mesosphere.com/repo",
+    "DCOS_PACKAGE_METADATA": "eyJwYWNrYWdpbmdWZXJzaW9uIjoiMy4wIiwibmFtZSI6InBvc3RncmVzcWwiLCJ2ZXJzaW9uIjoiOS42LTAuMiIsIm1haW50YWluZXIiOiJodHRwczovL2Rjb3MuaW8vY29tbXVuaXR5LyIsImRlc2NyaXB0aW9uIjoiUG9zdGdyZVNRTCBpcyBhbiBvYmplY3QtcmVsYXRpb25hbCBkYXRhYmFzZSBtYW5hZ2VtZW50IHN5c3RlbSAoT1JEQk1TKSB3aXRoIGFuIGVtcGhhc2lzIG9uIGV4dGVuc2liaWxpdHkgYW5kIHN0YW5kYXJkcy1jb21wbGlhbmNlLiIsInRhZ3MiOlsicG9zdGdyZXMiLCJwb3N0Z3Jlc3FsIiwiZGF0YWJhc2UiXSwic2VsZWN0ZWQiOmZhbHNlLCJzY20iOiJodHRwczovL2dpdGh1Yi5jb20vZG9ja2VyLWxpYnJhcnkvb2ZmaWNpYWwtaW1hZ2VzLyIsIndlYnNpdGUiOiJodHRwOi8vd3d3LnBvc3RncmVzcWwub3JnLyIsImZyYW1ld29yayI6dHJ1ZSwicHJlSW5zdGFsbE5vdGVzIjoiVGhpcyBEQy9PUyBTZXJ2aWNlIGlzIGN1cnJlbnRseSBpbiBwcmV2aWV3LiBUaGVyZSBtYXkgYmUgYnVncywgaW5jb21wbGV0ZSBmZWF0dXJlcywgaW5jb3JyZWN0IGRvY3VtZW50YXRpb24sIG9yIG90aGVyIGRpc2NyZXBhbmNpZXMuXG5cbmBgYEFkdmFuY2VkIEluc3RhbGxhdGlvbiBvcHRpb25zIG5vdGVzYGBgXG5cbnN0b3JhZ2UgLyAqcGVyc2lzdGVuY2UqOiBjcmVhdGUgbG9jYWwgcGVyc2lzdGVudCB2b2x1bWVzIGZvciBpbnRlcm5hbCBzdG9yYWdlIGZpbGVzIHRvIHN1cnZpdmUgYWNyb3NzIHJlc3RhcnRzIG9yIGZhaWx1cmVzLlxuXG5zdG9yYWdlIC8gcGVyc2lzdGVuY2UgLyAqZXh0ZXJuYWwqOiBjcmVhdGUgZXh0ZXJuYWwgcGVyc2lzdGVudCB2b2x1bWVzLiBUaGlzIGFsbG93cyB0byB1c2UgYW4gZXh0ZXJuYWwgc3RvcmFnZSBzeXN0ZW0gc3VjaCBhcyBBbWF6b24gRUJTLCBPcGVuU3RhY2sgQ2luZGVyLCBFTUMgSXNpbG9uLCBFTUMgU2NhbGVJTywgRU1DIFh0cmVtSU8sIEVNQyBWTUFYIGFuZCBHb29nbGUgQ29tcHV0ZSBFbmdpbmUgcGVyc2lzdGVudCBzdG9yYWdlLiAqTk9URSo6IFRvIHVzZSBleHRlcm5hbCB2b2x1bWVzIHdpdGggREMvT1MsIHlvdSBNVVNUIGVuYWJsZSB0aGVtIGR1cmluZyBDTEkgb3IgQWR2YW5jZWQgaW5zdGFsbGF0aW9uLlxuXG5zdG9yYWdlIC8gKmhvc3Rfdm9sdW1lKjogIGlmIHBlcnNpc3RlbmNlIGlzIG5vdCBzZWxlY3RlZCwgdGhpcyBwYWNrYWdlIGNhbiB1c2UgYSBsb2NhbCB2b2x1bWUgaW4gdGhlIGhvc3QgZm9yIHN0b3JhZ2UsIGxpa2UgYSBsb2NhbCBkaXJlY3Rvcnkgb3IgYW4gTkZTIG1vdW50LiBUaGUgcGFyYW1ldGVyICpob3N0X3ZvbHVtZSogY29udHJvbHMgdGhlIHBhdGggaW4gdGhlIGhvc3QgaW4gd2hpY2ggdGhlc2Ugdm9sdW1lcyB3aWxsIGJlIGNyZWF0ZWQsIHdoaWNoIE1VU1QgYmUgdGhlIHNhbWUgb24gYWxsIG5vZGVzIG9mIHRoZSBjbHVzdGVyLlxuXG5OT1RFOiBJZiB5b3UgZGlkbid0IHNlbGVjdCBwZXJzaXN0ZW5jZSBpbiB0aGUgc3RvcmFnZSBzZWN0aW9uLCBvciBwcm92aWRlZCBhIHZhbGlkIHZhbHVlIGZvciAqaG9zdF92b2x1bWUqIG9uIGluc3RhbGxhdGlvbixcbllPVVIgREFUQSBXSUxMIE5PVCBCRSBTQVZFRCBJTiBBTlkgV0FZLlxuXG5uZXR3b3JraW5nIC8gKnBvcnQqOiBUaGlzIERDL09TIHNlcnZpY2UgY2FuIGJlIGFjY2Vzc2VkIGZyb20gYW55IG90aGVyIGFwcGxpY2F0aW9uIHRocm91Z2ggYSBOQU1FRCBWSVAgaW4gdGhlIGZvcm1hdCAqYHNlcnZpY2VfbmFtZS5tYXJhdGhvbi5sNGxiLnRoaXNkY29zLmRpcmVjdG9yeTpwb3J0YCouIENoZWNrIHN0YXR1cyBvZiB0aGUgVklQIGluIHRoZSAqTmV0d29yayogdGFiIG9mIHRoZSBEQy9PUyBEYXNoYm9hcmQgKEVudGVycHJpc2UgREMvT1Mgb25seSkuXG5cbm5ldHdvcmtpbmcgLyAqZXh0ZXJuYWxfYWNjZXNzKjogY3JlYXRlIGFuIGVudHJ5IGluIE1hcmF0aG9uLUxCIGZvciBhY2Nlc3NpbmcgdGhlIHNlcnZpY2UgZnJvbSBvdXRzaWRlIG9mIHRoZSBjbHVzdGVyXG5cbm5ldHdvcmtpbmcgLyAqZXh0ZXJuYWxfYWNjZXNzX3BvcnQqOiBwb3J0IHRvIGJlIHVzZWQgaW4gTWFyYXRob24tTEIgZm9yIGFjY2Vzc2luZyB0aGUgc2VydmljZS4iLCJwb3N0SW5zdGFsbE5vdGVzIjoiU2VydmljZSBpbnN0YWxsZWQuXG5cbkRlZmF1bHQgbG9naW46IGBhZG1pbmAvYHBhc3N3b3JkYC4iLCJwb3N0VW5pbnN0YWxsTm90ZXMiOiJTZXJ2aWNlIHVuaW5zdGFsbGVkLiBOb3RlIHRoYXQgYW55IHBlcnNpc3RpbmcgZGF0YSBzdGlsbCBleGlzdHMgYW5kIHdpbGwgbmVlZCB0byBiZSBtYW51YWxseSByZW1vdmVkLiIsImxpY2Vuc2VzIjpbeyJuYW1lIjoiTUlUIExpY2Vuc2UiLCJ1cmwiOiJodHRwczovL29wZW5zb3VyY2Uub3JnL2xpY2Vuc2VzL01JVCJ9XSwiaW1hZ2VzIjp7Imljb24tc21hbGwiOiJodHRwczovL2Rvd25sb2Fkcy5tZXNvc3BoZXJlLmNvbS9hc3NldHMvdW5pdmVyc2UvMDAwL3Bvc3RncmVzcWwtaWNvbi1zbWFsbC5wbmciLCJpY29uLW1lZGl1bSI6Imh0dHBzOi8vZG93bmxvYWRzLm1lc29zcGhlcmUuY29tL2Fzc2V0cy91bml2ZXJzZS8wMDAvcG9zdGdyZXNxbC1pY29uLW1lZGl1bS5wbmciLCJpY29uLWxhcmdlIjoiaHR0cHM6Ly9kb3dubG9hZHMubWVzb3NwaGVyZS5jb20vYXNzZXRzL3VuaXZlcnNlLzAwMC9wb3N0Z3Jlc3FsLWljb24tbGFyZ2UucG5nIn19",
+    "DCOS_PACKAGE_REGISTRY_VERSION": "3.0",
+    "DCOS_SERVICE_NAME": "postgresql",
+    "DCOS_PACKAGE_VERSION": "9.6-0.2",
+    "DCOS_PACKAGE_NAME": "postgresql",
+    "MARATHON_SINGLE_INSTANCE_APP": "true",
+    "DCOS_PACKAGE_IS_FRAMEWORK": "false"
+  },
+  "id": "/devops/dev/awx/postgres",
+  "backoffFactor": 1.15,
+  "backoffSeconds": 1,
+  "container": {
+    "portMappings": [{
+      "containerPort": 5432,
+      "hostPort": 0,
+      "labels": {
+        "VIP_0": "/awx-postgres:5432"
+      },
+      "protocol": "tcp",
+      "servicePort": 0,
+      "name": "awx-postgres"
+    }],
+    "type": "DOCKER",
+    "volumes": [{
+      "containerPath": "/var/lib/postgresql/data/",
+      "hostPath": "/mnt/nfs/awx_data/postgres_data",
+      "mode": "RW"
+    }],
+    "docker": {
+      "image": "postgres:9.6",
+      "forcePullImage": false,
+      "privileged": false,
+      "parameters": []
+    }
+  },
+  "cpus": 0.3,
+  "disk": 0,
+  "env": {
+    "POSTGRES_USER": {
+      "secret": "postgres_user"
+    },
+    "POSTGRES_PGDATA": "/var/lib/postgresql/data/pgdata",
+    "POSTGRES_DB": "awx",
+    "POSTGRES_PASSWORD": {
+      "secret": "postgres_password"
+    }
+  },
+  "healthChecks": [{
+    "gracePeriodSeconds": 300,
+    "intervalSeconds": 60,
+    "maxConsecutiveFailures": 3,
+    "portIndex": 0,
+    "timeoutSeconds": 20,
+    "delaySeconds": 15,
+    "protocol": "TCP",
+    "ipProtocol": "IPv4"
+  }],
+  "instances": 1,
+  "maxLaunchDelaySeconds": 3600,
+  "mem": 1024,
+  "gpus": 0,
+  "networks": [{
+    "mode": "container/bridge"
+  }],
+  "requirePorts": false,
+  "upgradeStrategy": {
+    "maximumOverCapacity": 0,
+    "minimumHealthCapacity": 0
+  },
+  "killSelection": "YOUNGEST_FIRST",
+  "unreachableStrategy": {
+    "inactiveAfterSeconds": 300,
+    "expungeAfterSeconds": 600
+  },
+  "fetch": [],
+  "constraints": [],
+  "secrets": {
+    "postgres_user": {
+      "source": "devops/dev/awx/awx_postgres_user"
+    },
+    "postgres_password": {
+      "source": "devops/dev/awx/awx_postgres_password"
+    }
+  }
+}

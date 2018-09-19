@@ -1,0 +1,4 @@
+docker/data/awx
+docker/data/postgres
+
+ansible/build/

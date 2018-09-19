@@ -1,0 +1,123 @@
+{
+  "labels": {
+    "HAPROXY_0_MODE": "http",
+    "DCOS_SERVICE_SCHEME": "http",
+    "HAPROXY_GROUP": "external",
+    "DCOS_SERVICE_NAME": "awx-dev",
+    "HAPROXY_0_HTTP_BACKEND_REVPROXY_PATH": "/",
+    "HAPROXY_0_HTTP_BACKEND_PROXYPASS_PATH": "/",
+    "HAPROXY_0_BACKEND_HTTP_OPTIONS": "  option httplog\n  option forwardfor\n http-request add-header X-Forwarded-For %[src]\n http-request add-header X-Client-IP %[src]\n  http-request set-header X-Forwarded-Port %[dst_port]\n  http-request add-header X-Forwarded-Proto https if { ssl_fc }\n",
+    "HAPROXY_0_PATH": "/",
+    "HAPROXY_0_VHOST": "awx-dev-2125677669.us-east-1.elb.amazonaws.com"
+  },
+  "id": "/devops/dev/awx/awx-web",
+  "backoffFactor": 1.15,
+  "backoffSeconds": 1,
+  "container": {
+    "portMappings": [
+      {
+        "containerPort": 8052,
+        "hostPort": 0,
+        "protocol": "tcp",
+        "servicePort": 10215
+      },
+      {
+        "containerPort": 8051,
+        "hostPort": 0,
+        "protocol": "tcp",
+        "servicePort": 10214
+      }
+    ],
+    "type": "DOCKER",
+    "volumes": [
+      {
+        "containerPath": "/etc/pki/ca-trust/source/anchors",
+        "hostPath": "/mnt/nfs/awx_data/ca-trust/source/anchors",
+        "mode": "RO"
+      },
+      {
+        "containerPath": "/var/lib/awx/projects",
+        "hostPath": "/mnt/nfs/awx_data/projects",
+        "mode": "RW"
+      }
+    ],
+    "docker": {
+      "image": "ansible/awx_web:1.0.6",
+      "forcePullImage": false,
+      "privileged": true,
+      "parameters": []
+    }
+  },
+  "cpus": 1,
+  "disk": 0,
+  "env": {
+    "DATABASE_USER": {
+      "secret": "postgres_user"
+    },
+    "DATABASE_PASSWORD": {
+      "secret": "postgres_password"
+    },
+    "AWX_ADMIN_PASSWORD": {
+      "secret": "admin_password"
+    },
+    "SECRET_KEY": {
+      "secret": "secret_key"
+    },
+    "AWX_ADMIN_USER": {
+      "secret": "admin_user"
+    },
+    "RABBITMQ_USER": "guest",
+    "RABBITMQ_PORT": "5672",
+    "http_proxy": "http://dev1.mesos.rccl.com/awx-dev/",
+    "DATABASE_HOST": "awx-postgres.marathon.l4lb.thisdcos.directory",
+    "RABBITMQ_VHOST": "awx",
+    "MEMCACHED_HOST": "awx-memcached.marathon.l4lb.thisdcos.directory",
+    "DATABASE_NAME": "awx",
+    "INTERNAL_API_URL": "http://127.0.0.1:8052",
+    "REMOTE_HOST_HEADERS": "['HTTP_X_FORWARDED_FOR']",
+    "DATABASE_PORT": "5432",
+    "MEMCACHED_PORT": "11211",
+    "https_proxy": "https://dev1.mesos.rccl.com/awx-dev/",
+    "RABBITMQ_HOST": "awx-rabbitmq.marathon.l4lb.thisdcos.directory",
+    "RABBITMQ_PASSWORD": "guest"
+  },
+  "instances": 1,
+  "maxLaunchDelaySeconds": 3600,
+  "mem": 2048,
+  "gpus": 0,
+  "networks": [
+    {
+      "mode": "container/bridge"
+    }
+  ],
+  "requirePorts": false,
+  "secrets": {
+    "postgres_user": {
+      "source": "devops/dev/awx/awx_postgres_user"
+    },
+    "postgres_password": {
+      "source": "devops/dev/awx/awx_postgres_password"
+    },
+    "admin_password": {
+      "source": "devops/dev/awx/awx_admin_password"
+    },
+    "secret_key": {
+      "source": "devops/dev/awx/awx_secret_key"
+    },
+    "admin_user": {
+      "source": "devops/dev/awx/awx_admin_user"
+    }
+  },
+  "upgradeStrategy": {
+    "maximumOverCapacity": 1,
+    "minimumHealthCapacity": 1
+  },
+  "killSelection": "YOUNGEST_FIRST",
+  "unreachableStrategy": {
+    "inactiveAfterSeconds": 300,
+    "expungeAfterSeconds": 600
+  },
+  "healthChecks": [],
+  "fetch": [],
+  "constraints": []
+}
