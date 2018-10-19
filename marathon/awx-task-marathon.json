@@ -18,7 +18,7 @@
       }
     ],
     "docker": {
-      "image": "ansible/awx_task:1.0.6",
+      "image": "ansible/awx_task:2.0.1",
       "forcePullImage": false,
       "privileged": true,
       "parameters": [
@@ -33,7 +33,7 @@
       ]
     }
   },
-  "cpus": 4,
+  "cpus": 2,
   "disk": 0,
   "env": {
     "DATABASE_USER": {
@@ -56,7 +56,7 @@
     "DATABASE_HOST": "awx-postgres.marathon.l4lb.thisdcos.directory",
     "RABBITMQ_VHOST": "awx",
     "MEMCACHED_HOST": "awx-memcached.marathon.l4lb.thisdcos.directory",
-    "DATABASE_NAME": "awx",
+    "DATABASE_NAME": "awx_2_0_1",
     "DATABASE_PORT": "5432",
     "MEMCACHED_PORT": "11211",
     "RABBITMQ_HOST": "awx-rabbitmq.marathon.l4lb.thisdcos.directory",

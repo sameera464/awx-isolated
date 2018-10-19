@@ -1,6 +1,5 @@
-version: '2'
+version: '3'
 services:
-
   web:
     image: devops/awx-web:develop
     depends_on:
@@ -68,17 +67,6 @@ services:
       MEMCACHED_PORT: 11211
       AWX_ADMIN_USER: admin
       AWX_ADMIN_PASSWORD: password
-      AWX_GROUP_QUEUES: tower,thepentagon
-
-  isolated:
-    image: devops/awx-isolated:develop
-    depends_on:
-      - task
-    hostname: isolated
-    user: root
-    privileged: true
-    volumes:
-      - ./data/ssh/isolated/authorized_keys:/home/awx/.ssh/authorized_keys:rw
 
   rabbitmq:
     image: ansible/awx_rabbitmq:3.7.4

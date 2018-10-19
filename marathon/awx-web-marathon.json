@@ -42,7 +42,7 @@
       }
     ],
     "docker": {
-      "image": "ansible/awx_web:1.0.6",
+      "image": "ansible/awx_web:2.0.1",
       "forcePullImage": false,
       "privileged": true,
       "parameters": []
@@ -72,7 +72,7 @@
     "DATABASE_HOST": "awx-postgres.marathon.l4lb.thisdcos.directory",
     "RABBITMQ_VHOST": "awx",
     "MEMCACHED_HOST": "awx-memcached.marathon.l4lb.thisdcos.directory",
-    "DATABASE_NAME": "awx",
+    "DATABASE_NAME": "awx_2_0_1",
     "INTERNAL_API_URL": "http://127.0.0.1:8052",
     "REMOTE_HOST_HEADERS": "['HTTP_X_FORWARDED_FOR']",
     "DATABASE_PORT": "5432",

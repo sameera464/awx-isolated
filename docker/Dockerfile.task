@@ -1,6 +1,4 @@
-FROM ansible/awx_task:1.0.7
+FROM ansible/awx_task:2.0.1
 
 COPY ./settings/settings.py /etc/tower/settings.py
-COPY ./settings/launch_isolated.sh /usr/bin/launch_awx_isolated.sh
-
-CMD /usr/bin/launch_awx_task.sh
+COPY ./settings/launch_task.sh /usr/bin/launch_awx_task.sh

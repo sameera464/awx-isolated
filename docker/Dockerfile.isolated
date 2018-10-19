@@ -1,13 +1,17 @@
 FROM centos:7
 RUN yum clean all
 
-COPY ./awx/Makefile /tmp/Makefile
-RUN mkdir /tmp/requirements
-COPY ./awx/requirements/requirements_ansible.txt \
-  ./awx/requirements/requirements_ansible_git.txt \
-  ./awx/requirements/requirements_ansible_uninstall.txt \
-  ./awx/requirements/requirements_isolated.txt \
-  /tmp/requirements/
+RUN mkdir -p /awx \
+    && curl -SL -o /tmp/awx.tar.gz https://github.com/ansible/awx/archive/2.0.1.tar.gz \
+    && tar -C /awx -xvzf /tmp/awx.tar.gz --strip-components 1
+
+RUN cp /awx/Makefile /tmp/Makefile
+RUN mkdir /tmp/requirements \
+  && cp /awx/requirements/requirements_ansible.txt \
+    /awx/requirements/requirements_ansible_git.txt \
+    /awx/requirements/requirements_ansible_uninstall.txt \
+    /awx/requirements/requirements_isolated.txt \
+    /tmp/requirements/
 
 RUN yum -y update && yum -y install curl epel-release \
   && yum -y update && yum -y install openssh-server ansible mg vim tmux git python-devel python-psycopg2 make python-psutil libxml2-devel libxslt-devel libstdc++.so.6 gcc cyrus-sasl-devel cyrus-sasl openldap-devel libffi-devel zeromq-devel python-pip xmlsec1-devel swig krb5-devel xmlsec1-openssl xmlsec1 xmlsec1-openssl-devel libtool-ltdl-devel bubblewrap zanata-python-client gettext gcc-c++ libcurl-devel python-pycurl bzip2 \
@@ -23,7 +27,7 @@ ENV LANGUAGE en_US:en
 ENV LC_ALL en_US.UTF-8
 
 WORKDIR /
-COPY ./awx/tools/docker-isolated/awx-expect /usr/local/bin/awx-expect
+RUN cp /awx/tools/docker-isolated/awx-expect /usr/local/bin/awx-expect
 
 RUN rm -f /etc/ssh/ssh_host_ecdsa_key /etc/ssh/ssh_host_rsa_key \
   && ssh-keygen -q -N "" -t dsa -f /etc/ssh/ssh_host_ecdsa_key \
@@ -40,9 +44,10 @@ RUN  adduser awx \
   && chmod 700 /home/awx/.ssh \
   && chown -R awx:awx /home/awx/.ssh
 
-COPY ./awx/ awx/
-COPY ./awx/awx/main/expect /awx_devel
-COPY ./awx/awx/lib /awx_lib
+RUN mkdir -p /awx_devel \
+  && mkdir - p /awx_lib \
+  && cp -r /awx/awx/main/expect /awx_devel \
+  && cp -r /awx/awx/lib /awx_lib
 
 WORKDIR /awx
 RUN . /var/lib/awx/venv/awx/bin/activate \

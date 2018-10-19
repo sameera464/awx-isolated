@@ -27,6 +27,18 @@ containers.
 - memcached
 - postgres
 
+##  Starting Docker Compose
+
+To start docker-compose with no isolated run
+```console
+$ docker-compose up
+```
+
+To start docker-compose with isolated image run
+```console
+$ docker-compose -f docker-compose.yml -f docker-isolated-override.yml up
+```
+
 ## Accessing AWX
 
 To access AWX you can hit the url `http://localhost:8052`. Defautl username/password
@@ -41,6 +53,13 @@ location is mounted as volumes to the container.
 
 It maintains state for Postgres database as well as creating unsecure ssh keys
 for task container to have access to the isolated container.
+
+# Running Jobs on Isolated Nodes
+
+To run a job on an isolated node you must specify it at a template level. Under the
+template configuration select that instance group called `thepentagon` and save the
+job template. This tells the teamplate that it must run an an instance for the group
+`thepentagon`.
 
 # Known Issues
 

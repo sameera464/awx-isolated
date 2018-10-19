@@ -1,0 +1,13 @@
+version: '3'
+services:
+  task:
+    environment:
+      AWX_GROUP_QUEUES: tower,thepentagon
+    links:
+      - isolated
+  isolated:
+    image: devops/awx-isolated:develop
+    hostname: isolated
+    volumes:
+      - ./data/ssh/isolated:/root/.ssh:rw
+    privileged: true
