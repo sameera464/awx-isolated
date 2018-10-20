@@ -9,5 +9,5 @@ services:
     image: devops/awx-isolated:develop
     hostname: isolated
     volumes:
-      - ./data/ssh/isolated:/root/.ssh:rw
+      - ./data/ssh/isolated:/home/awx/.ssh:rw
     privileged: true

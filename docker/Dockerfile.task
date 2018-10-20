@@ -1,4 +1,5 @@
-FROM ansible/awx_task:2.0.1
+ARG AWX_VERSION=1.0.7
+FROM ansible/awx_task:$AWX_VERSION
 
 COPY ./settings/settings.py /etc/tower/settings.py
 COPY ./settings/launch_task.sh /usr/bin/launch_awx_task.sh

@@ -1,4 +1,5 @@
 docker/data/awx
 docker/data/postgres
+docker/data/ssh/task/known_hosts
 
 ansible/build/

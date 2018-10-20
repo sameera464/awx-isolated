@@ -1,3 +1,4 @@
 Host isolated
   Hostname isolated
   IdentityFile /root/.ssh/id_rsa
+  StrictHostKeyChecking no
