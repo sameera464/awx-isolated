@@ -83,7 +83,7 @@
   },
   "instances": 1,
   "maxLaunchDelaySeconds": 3600,
-  "mem": 2048,
+  "mem": 1953,
   "gpus": 0,
   "networks": [
     {

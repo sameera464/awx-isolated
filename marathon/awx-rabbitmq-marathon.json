@@ -3,16 +3,19 @@
   "backoffFactor": 1.15,
   "backoffSeconds": 1,
   "container": {
-    "portMappings": [{
-      "containerPort": 5672,
-      "hostPort": 0,
-      "labels": {
-        "VIP_0": "/awx-rabbitmq:5672"
-      },
-      "protocol": "tcp",
-      "servicePort": 0
-    }],
+    "portMappings": [
+      {
+        "containerPort": 5672,
+        "hostPort": 0,
+        "labels": {
+          "VIP_0": "/awx-rabbitmq:5672"
+        },
+        "protocol": "tcp",
+        "servicePort": 0
+      }
+    ],
     "type": "DOCKER",
+    "volumes": [],
     "docker": {
       "image": "ansible/awx_rabbitmq:3.7.4",
       "forcePullImage": false,
@@ -20,22 +23,29 @@
       "parameters": []
     }
   },
-  "cpus": 0.3,
+  "cpus": 0.5,
   "disk": 0,
-  "instances": 1,
-  "maxLaunchDelaySeconds": 3600,
-  "mem": 1024,
-  "gpus": 0,
-  "networks": [{
-    "mode": "container/bridge"
-  }],
   "env": {
-    "RABBITMQ_DEFAULT_VHOST": "awx",
     "RABBITMQ_ERLANG_COOKIE": {
       "secret": "erlang_cookie"
+    },
+    "RABBITMQ_DEFAULT_VHOST": "awx"
+  },
+  "instances": 1,
+  "maxLaunchDelaySeconds": 3600,
+  "mem": 976,
+  "gpus": 0,
+  "networks": [
+    {
+      "mode": "container/bridge"
+    }
+  ],
+  "requirePorts": false,
+  "secrets": {
+    "erlang_cookie": {
+      "source": "devops/dev/awx/awx_rabbitmq_erlang_cookie"
     }
   },
-  "requirePorts": false,
   "upgradeStrategy": {
     "maximumOverCapacity": 1,
     "minimumHealthCapacity": 1
@@ -47,10 +57,5 @@
   },
   "healthChecks": [],
   "fetch": [],
-  "constraints": [],
-  "secrets": {
-    "erlang_cookie": {
-      "source": "devops/dev/awx/awx_rabbitmq_erlang_cookie"
-    }
-  }
+  "constraints": []
 }

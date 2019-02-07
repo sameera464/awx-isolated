@@ -33,7 +33,7 @@
       ]
     }
   },
-  "cpus": 2,
+  "cpus": 0.5,
   "disk": 0,
   "env": {
     "DATABASE_USER": {
@@ -64,7 +64,7 @@
   },
   "instances": 1,
   "maxLaunchDelaySeconds": 3600,
-  "mem": 4096,
+  "mem": 976,
   "gpus": 0,
   "networks": [
     {

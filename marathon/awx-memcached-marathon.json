@@ -3,16 +3,19 @@
   "backoffFactor": 1.15,
   "backoffSeconds": 1,
   "container": {
-    "portMappings": [{
-      "containerPort": 11211,
-      "hostPort": 0,
-      "labels": {
-        "VIP_0": "/awx-memcached:11211"
-      },
-      "protocol": "tcp",
-      "servicePort": 0
-    }],
+    "portMappings": [
+      {
+        "containerPort": 11211,
+        "hostPort": 0,
+        "labels": {
+          "VIP_0": "/awx-memcached:11211"
+        },
+        "protocol": "tcp",
+        "servicePort": 0
+      }
+    ],
     "type": "DOCKER",
+    "volumes": [],
     "docker": {
       "image": "memcached:alpine",
       "forcePullImage": false,
@@ -20,15 +23,17 @@
       "parameters": []
     }
   },
-  "cpus": 0.3,
+  "cpus": 0.5,
   "disk": 0,
   "instances": 1,
   "maxLaunchDelaySeconds": 3600,
-  "mem": 1024,
+  "mem": 976,
   "gpus": 0,
-  "networks": [{
-    "mode": "container/bridge"
-  }],
+  "networks": [
+    {
+      "mode": "container/bridge"
+    }
+  ],
   "requirePorts": false,
   "upgradeStrategy": {
     "maximumOverCapacity": 1,
