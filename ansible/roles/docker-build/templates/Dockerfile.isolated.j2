@@ -1,0 +1,27 @@
+From {{ awx_docker_image }}:{{ awx_docker_tag }}
+
+USER 0
+RUN sudo yum -y remove nginx
+
+WORKDIR /tmp
+
+COPY requirements_isolated.txt /tmp/requirements/requirements_isolated.txt
+
+RUN VENV_BASE=/var/lib/awx/venv make requirements_isolated
+COPY supervisor_isolated.conf /supervisor_isolated.conf
+COPY launch_isolated_task.sh /usr/bin/launch_isolated_task.sh
+
+RUN rm -f /etc/ssh/ssh_host_ecdsa_key /etc/ssh/ssh_host_rsa_key \ 
+  && ssh-keygen -q -N "" -t dsa -f /etc/ssh/ssh_host_ecdsa_key \ 
+  && ssh-keygen -q -N "" -t rsa -f /etc/ssh/ssh_host_rsa_key \ 
+  && sed -i "s/#UsePrivilegeSeparation.*/UsePrivilegeSeparation no/g" /etc/ssh/sshd_config \ 
+  && sed -i "s/UsePAM.*/UsePAM yes/g" /etc/ssh/sshd_config \ 
+  && ssh-keygen -A \ 
+  && mkdir -p /root/.ssh \ 
+  && touch /root/.ssh/authorized_keys
+
+USER 1000
+
+WORKDIR /var/lib/awx
+
+CMD /usr/bin/launch_isolated_task.sh

@@ -1,0 +1,12 @@
+---
+- name: Template web Dockerfile
+  template:
+    src: Dockerfile.j2
+    dest: "{{ docker_base_path }}/Dockerfile"
+  delegate_to: localhost
+
+- name: Template task Dockerfile
+  template:
+    src: Dockerfile.task.j2
+    dest: "{{ docker_base_path }}/Dockerfile.task"
+  delegate_to: localhost
