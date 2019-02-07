@@ -51,15 +51,15 @@
     "AWX_ADMIN_USER": {
       "secret": "admin_user"
     },
-    "RABBITMQ_USER": "guest",
-    "RABBITMQ_PORT": "5672",
     "DATABASE_HOST": "awx-postgres.marathon.l4lb.thisdcos.directory",
-    "RABBITMQ_VHOST": "awx",
-    "MEMCACHED_HOST": "awx-memcached.marathon.l4lb.thisdcos.directory",
     "DATABASE_NAME": "awx_2_0_1",
     "DATABASE_PORT": "5432",
+    "MEMCACHED_HOST": "awx-memcached.marathon.l4lb.thisdcos.directory",
     "MEMCACHED_PORT": "11211",
+    "RABBITMQ_VHOST": "awx",
     "RABBITMQ_HOST": "awx-rabbitmq.marathon.l4lb.thisdcos.directory",
+    "RABBITMQ_PORT": "5672",
+    "RABBITMQ_USER": "guest",
     "RABBITMQ_PASSWORD": "guest"
   },
   "instances": 1,
